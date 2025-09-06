@@ -1,6 +1,11 @@
-const { app } = require('./app');
+// Example: index.js
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Running on http://localhost:${PORT}`);
+app.get('/', (req, res) => {  
+     res.send('Hello World! we made it');});
+
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
 });
